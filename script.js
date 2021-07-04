@@ -128,33 +128,60 @@ var functionContainer = {
 };
 
 // Now I want all of my prompts in one place
-var lenPrompt = +prompt(
-  "How long would you like your password to be? Must be between 8 and 128."
-);
+// but first I must validate lenPrompt and convert
+// it to number using +
 // I need a function that'll validate the length of user var lenPrompt
 var validateLen = function (a) {
   while (isNaN(lenPrompt) || lenPrompt < 8 || lenPrompt > 128) {
     lenPrompt = +prompt(
       "How long would you like your password to be? MUST BE A NUMBER BETWEEN 8 AND 128!!!"
     );
+    validateLen();
+    return lenPrompt;
   }
+  return lenPrompt;
 };
 
-validateLen(lenPrompt);
-
+var lenPrompt = validateLen();
 var hasLower = confirm("Would you like to include lowercase?");
 var hasUpper = confirm("Would you like to include uppercase?");
 var hasNumber = confirm("Would you like to include numbers?");
 var hasSymbol = confirm("Would you like to include symbols?");
 
-var generatePassword = function () {};
+var generatePassword = function (lower, upper, number, symbol, length) {
+  var generatedPassword = "";
+  var typesCount = lower + upper + number + symbol;
+  var typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
+    (item) => Object.values(item)[0]
+  );
+
+  if (typesCount === 0) {
+    return "";
+  }
+
+  for (var i = 0; i < length; i += typesCount) {
+    typesArr.forEach((type) => {
+      var funcName = Object.keys(type)[0];
+
+      generatedPassword += functionContainer[funcName]();
+    });
+  }
+
+  return generatedPassword.slice(0, length);
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(
+    hasLower,
+    hasUpper,
+    hasNumber,
+    hasNumber,
+    lenPrompt
+  );
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
