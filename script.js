@@ -167,8 +167,6 @@ var generatePassword = function (lower, upper, number, symbol, length) {
     });
   }
 
-  console.log(generatedPassword.slice(0, length));
-
   return generatedPassword.slice(0, length);
 };
 
