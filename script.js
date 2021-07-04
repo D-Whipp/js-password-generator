@@ -118,6 +118,37 @@ var getRanSymbol = function () {
   return symbolArr[Math.floor(Math.random() * symbolArr.length)];
 };
 
+// Now I want to "house" all these functions in one place
+// I'll use an object
+var functionContainer = {
+  lower: getRanLowercase,
+  upper: getRanUppercase,
+  number: getRanNumber,
+  symbol: getRanSymbol,
+};
+
+// Now I want all of my prompts in one place
+var lenPrompt = +prompt(
+  "How long would you like your password to be? Must be between 8 and 128."
+);
+// I need a function that'll validate the length of user var lenPrompt
+var validateLen = function (a) {
+  while (isNaN(lenPrompt) || lenPrompt < 8 || lenPrompt > 128) {
+    lenPrompt = +prompt(
+      "How long would you like your password to be? MUST BE A NUMBER BETWEEN 8 AND 128!!!"
+    );
+  }
+};
+
+validateLen(lenPrompt);
+
+var hasLower = confirm("Would you like to include lowercase?");
+var hasUpper = confirm("Would you like to include uppercase?");
+var hasNumber = confirm("Would you like to include numbers?");
+var hasSymbol = confirm("Would you like to include symbols?");
+
+var generatePassword = function () {};
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
