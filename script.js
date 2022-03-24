@@ -128,21 +128,21 @@ var functionContainer = {
 };
 
 // Now I want all of my prompts in one place
-// but first I must validate lenPrompt and convert
+// but first I must validate getPasswordLen and convert
 // it to number using +
-// I need a function that'll validate the length of user var lenPrompt
+// I need a function that'll validate the length of user var getPasswordLen
 var validateLen = function (a) {
-  while (isNaN(lenPrompt) || lenPrompt < 8 || lenPrompt > 128) {
-    lenPrompt = +prompt(
+  while (isNaN(getPasswordLen) || getPasswordLen < 8 || getPasswordLen > 128) {
+    getPasswordLen = +prompt(
       "How long would you like your password to be? MUST BE A NUMBER BETWEEN 8 AND 128!!!"
     );
     validateLen();
-    return lenPrompt;
+    return getPasswordLen;
   }
-  return lenPrompt;
+  return getPasswordLen;
 };
 
-var lenPrompt = validateLen();
+var getPasswordLen = validateLen();
 var hasLower = confirm("Would you like to include lowercase?");
 var hasUpper = confirm("Would you like to include uppercase?");
 var hasNumber = confirm("Would you like to include numbers?");
@@ -180,7 +180,7 @@ function writePassword() {
     hasUpper,
     hasNumber,
     hasNumber,
-    lenPrompt
+    getPasswordLen
   );
   var passwordText = document.querySelector("#password");
 
