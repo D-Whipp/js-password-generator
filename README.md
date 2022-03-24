@@ -36,6 +36,6 @@ You can view the license I chose [here](https://choosealicense.com/licenses/mit/
 
 ## Badges
 
-[![html build](https://img.shields.io/badge/repo%20status-active-limegreen)](https://d-whipp.github.io/third-bootcamp-challenge/)
-[![css build](https://img.shields.io/badge/css-horiseon-orange?style=for-the-badge&logo=appveyor)](https://d-whipp.github.io/third-bootcamp-challenge/)
-[![git build](https://img.shields.io/badge/git-horiseon-brightgreen?style=plastic&logo=appveyor)](https://d-whipp.github.io/third-bootcamp-challenge/)
+[![repo status](https://img.shields.io/badge/repo%20status-active-limegreen)](https://d-whipp.github.io/third-bootcamp-challenge/)
+[![build status](https://img.shields.io/badge/status-stable-limegreen)](https://d-whipp.github.io/third-bootcamp-challenge/)
+[![git status](https://img.shields.io/badge/git%20status-deployed-limegreen)](https://d-whipp.github.io/third-bootcamp-challenge/)
