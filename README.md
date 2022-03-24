@@ -22,7 +22,7 @@ N/A
 
 ## Usage
 
-You can use this application simply by loading the page, answering a few prompts, and clicking generate password!
+You can use this application simply by loading this [page](https://d-whipp.github.io/third-bootcamp-challenge/), answering a few prompts, and clicking generate password!
 
 ## Credits
 
