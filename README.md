@@ -1,4 +1,4 @@
-# Third Coding Bootcamp Challenge: Password Generator
+# JavaScript Password Generator
 
 ##
 
